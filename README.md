@@ -5,6 +5,8 @@ This repository contains a set of API test cases developed using **RestAssured**
 ## Features
 
 - Automate GET requests to users and posts and do assertions.
+- Maven Surefire reports auto generated
+- [Github Actions](https://github.com/erissonbreno/SouthGeeksChallenge/actions) on each pull to master branch
 
 ---
 
@@ -35,10 +37,14 @@ To run the tests locally, ensure you have the following installed:
 - src/test/java/tests: Contains the tests written in RestAssured with Junit.
 pom.xml: Manages dependencies for the project.
 
+---
+
 ## Running Tests
 ```bash
    mvn test
    ```
+
+--- 
 
 ## Report
 - Built in maven surefire report is being generated under the folder **target/surefire-reports**, see TEST-tests.PostsTest.xml and TEST-tests.UsersTest.xml files
