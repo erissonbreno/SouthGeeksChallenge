@@ -31,7 +31,7 @@ To run the tests locally, ensure you have the following installed:
 2. Open the IDE
 3. Right click on the **pom.xml** to download the dependencies.
 
-# Project Structure
+## Project Structure
 - src/test/java/core: Contains the core of the application.
 - src/test/java/endpoints: Contains endpoints to be tested.
 - src/test/java/tests: Contains the tests written in RestAssured with Junit.
