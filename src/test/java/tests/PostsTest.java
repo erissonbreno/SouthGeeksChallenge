@@ -1,7 +1,10 @@
 package tests;
 
 import core.BaseTest;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import static endpoints.Endpoints.POSTS;
 import static io.restassured.RestAssured.given;
@@ -9,11 +12,12 @@ import static org.hamcrest.Matchers.*;
 
 public class PostsTest extends BaseTest {
 
-    @Test
-    public void shouldTitleNotBeEmpty() {
+    @ParameterizedTest
+    @ValueSource(ints = {1, 2, 3})
+    public void shouldTitleNotBeEmpty(int postId) {
         given().log().all()
                 .when()
-                .get(POSTS)
+                .get(POSTS + postId)
                 .then()
                 .log().all()
                 .statusCode(200)
