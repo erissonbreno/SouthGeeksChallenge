@@ -13,7 +13,7 @@ This repository contains a set of API test cases developed using **RestAssured**
 To run the tests locally, ensure you have the following installed:
 
 - **Java**: Version 11 or higher.
-- **Maven**: Latest version (minimum 3.6.3).
+- **Maven**: Latest version (minimum 3.0.0).
 - **IDE**: Any Java-supported IDE (e.g., IntelliJ IDEA, Eclipse).
 
 ---
@@ -34,3 +34,11 @@ To run the tests locally, ensure you have the following installed:
 - src/test/java/endpoints: Contains endpoints to be tested.
 - src/test/java/tests: Contains the tests written in RestAssured with Junit.
 pom.xml: Manages dependencies for the project.
+
+## Running Tests
+```bash
+   mvn test
+   ```
+
+## Report
+- Built in maven surefire report is being generated under the folder **target/surefire-reports**, see TEST-tests.PostsTest.xml and TEST-tests.UsersTest.xml files
