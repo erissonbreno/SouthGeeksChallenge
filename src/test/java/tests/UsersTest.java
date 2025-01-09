@@ -12,27 +12,27 @@ import static org.hamcrest.Matchers.*;
 public class UsersTest extends BaseTest {
     String validEmailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
 
-    @ParameterizedTest
-    @ValueSource(ints = {1, 2, 3})
-    public void shouldHaveValidEmail(int userId) {
+    @Test
+    public void shouldHaveValidEmail() {
         given()
                 .log().all()
                 .when()
-                .get(USERS + userId)
+                .get(USERS)
                 .then()
                 .log().all()
                 .statusCode(200)
                 .body("email", matchesPattern(validEmailRegex));
     }
 
-    @Test
-    public void shouldCityNotBeNull() {
+    @ParameterizedTest
+    @ValueSource(strings = {"city", "street"})
+    public void shouldCityNotBeNull(String attribute) {
         given().log().all()
                 .when()
                 .get(USERS)
                 .then()
                 .log().all()
                 .statusCode(200)
-                .body("address.city", notNullValue());
+                .body("address." + attribute, notNullValue());
     }
 }
